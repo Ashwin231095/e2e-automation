@@ -51,7 +51,15 @@ exports.config = {
       automaticallyGenerateReport: true,
       removeExistingJsonReportFile: true,
       reportPath: 'e2e/test-reports/html',
-      reportName: 'Re7 e2e results'
+      reportName: 'Re7 e2e results',
+      customData: {
+        title: 'Run info',
+        data: [
+            {label: 'Project', value: 'RParts Automation'},
+            {label: 'Release', value: '1.0.0'},
+            {label: 'Cycle', value: 'XXXXXXXXXXX'},
+        ]
+    }
     }
   }],
   onPrepare() {
