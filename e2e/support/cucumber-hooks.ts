@@ -2,7 +2,7 @@ import { Before, After } from 'cucumber';
 import { browser } from 'protractor';
 
 // Default before anything else, open the app and clear previous state
-Before({ timeout: 4 * 5000 }, async () => {
+Before({ timeout: 20 * 5000 }, async () => {
   await browser.get(browser.baseUrl);
   await browser.executeScript('window.sessionStorage.clear();');
   await browser.executeScript('window.localStorage.clear();');
@@ -12,7 +12,7 @@ Before({ timeout: 4 * 5000 }, async () => {
 
 // Note: The After hooks are run in reverse order that they are defined in
 // If the scenario failed, include a screenshot of the last step.
-After({ timeout: 10 * 1000 }, function(testCase) {
+After({ timeout: 100 * 1000 }, function(testCase) {
   const world = this;
   if (testCase.result.status !== 'passed' || true) {
     return browser.takeScreenshot().then((screenShot) => {

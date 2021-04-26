@@ -1,6 +1,7 @@
 {
   "name": "cucumber-protractor-demo",
   "version": "0.0.3",
+  "type": "module",
   "scripts": {
     "postinstall": "./node_modules/.bin/webdriver-manager update",
     "lint": "tslint -p ./",
