@@ -22,10 +22,12 @@ exports.config = {
     maxInstances: 3,
     chromeOptions: {
       args: [
-        '--window-size=700,700',
         '--disable-gpu',
         '--disable-dev-shm-usage',
-        '--incognito']
+        '--incognito',
+        '--ignore-certificate-errors',
+        '--allow-insecure-localhost'
+      ]
     },
   },
   directConnect: true,
