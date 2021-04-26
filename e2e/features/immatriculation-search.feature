@@ -1,6 +1,5 @@
-Feature: Make an order
-    As a user
-    Logged in R2 user to search Renault brand via Immatriculation to make the order
+Feature: Search Renault brand via Immatriculation to make the order
+    As a user Logged in R2 user to search Renault brand via Immatriculation to make the order
 
     Scenario: Logged in R2 user to search Renault brand via Immatriculation  to make the order.
         Given the user has the application url
