@@ -1,7 +1,6 @@
 # cucumber-protractor-demo
 
 Demonstrates a setup of Cucumber, Protractor, Webdriver (standalone). Using additional dependencies like a HTML reporting tool.
-The tests run on **TodoMVC** specically the Angular2 version on http://todomvc.com/examples/angular2/
 
 ## Install
 
