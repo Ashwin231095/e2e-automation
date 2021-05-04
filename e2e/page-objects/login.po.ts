@@ -28,8 +28,8 @@ export class LoginPage{
     await browser.sleep(1000);
     await browser.switchTo().window(currentGuid);
     await browser.waitForAngularEnabled(true);
-    await browser.wait(EC.visibilityOf(element(by.xpath('//span[text()="OK"]//parent::button'))), 10000);
-    const okButton = element(by.xpath('//span[text()="OK"]//parent::button'));
-    await okButton.click();
+    // await browser.wait(EC.visibilityOf(element(by.xpath('//span[text()="OK"]//parent::button'))), 10000);
+    // const okButton = element(by.xpath('//span[text()="OK"]//parent::button'));
+    // await okButton.click();
     }
 }

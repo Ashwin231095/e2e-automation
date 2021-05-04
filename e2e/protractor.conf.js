@@ -26,7 +26,8 @@ exports.config = {
         '--disable-dev-shm-usage',
         '--incognito',
         '--ignore-certificate-errors',
-        '--allow-insecure-localhost'
+        '--allow-insecure-localhost',
+        '--start-fullscreen'
       ]
     },
   },
