@@ -47,6 +47,7 @@ When('the user clicks on the login button 2', {timeout: 20 * 5000}, async () => 
 When('user logins in with credentials id {string} and password {string}', {timeout: 20 * 5000}, async (username, password) => {
     loginPage = new LoginPage();
     await loginPage.login(username, password);
+    await browser.sleep(1000);
     await browser.refresh();
 });
 
