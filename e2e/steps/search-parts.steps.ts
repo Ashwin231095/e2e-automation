@@ -17,6 +17,17 @@ When('the user searches for vehicle with Immatriculation number as {string}', {t
     await researchButton.click();
 });
 
+When('the user searches for vehicle with vin number as {string}', {timeout: 20 * 5000} , async (number: string) => {
+    let EC = protractor.ExpectedConditions;
+    const vinField = element(by.css('[id="vinNumber"]'));
+    await vinField.clear();
+    await vinField.sendKeys(number);
+    await browser.sleep(1000);
+    await browser.wait(EC.visibilityOf(element(by.xpath(`//div[contains(@class,"active")]//button[not(contains(@disabled,'disabled'))]`))), 10000);
+    const researchButton = element(by.xpath(`//div[contains(@class,"active")]//button[not(contains(@disabled,'disabled'))]`));
+    await researchButton.click();
+});
+
 When('the user views the result page selecting a brand {string}', {timeout: 20 * 5000}, async (brandName: string) => {
     const airFilter = element(by.xpath(`//label[text()="${brandName}"]`));
     await airFilter.click();
@@ -116,7 +127,8 @@ When('the user clicks on my orders button in order details page', {timeout: 20 *
 
 When('the user clicks on order details button', {timeout: 20 * 5000}, async () => {
     let EC = protractor.ExpectedConditions;
-    const detailsButton = $$('[class="detail-button-text"]').first();
+    await browser.sleep(100000);
+    const detailsButton = $$('[class*="detail-button-text"]').first();
     await detailsButton.click();
 });
 
@@ -143,6 +155,13 @@ When('the user clicks on logout button', {timeout: 20 * 5000}, async () => {
     await logoutButton.click();
 });
 
+When('the user clicks on vin tab in home page', async () => {
+    let EC = protractor.ExpectedConditions;
+    await browser.wait(EC.visibilityOf(element(by.xpath(`//li[@select="vm.resetFieldFunc('vin')"]//a`))), 10000);
+    const vimTab = element(by.xpath(`//li[@select="vm.resetFieldFunc('vin')"]//a`));
+    await vimTab.click();
+});
+
 Then('the Immatriculation error should appear', {timeout: 20 * 5000}, async () => {
     let EC = protractor.ExpectedConditions;
     await browser.wait(EC.visibilityOf(element(by.xpath('//span[@class="Aucun-vhicule-ident ng-binding"]'))), 10000);
@@ -152,10 +171,17 @@ Then('the Immatriculation error should appear', {timeout: 20 * 5000}, async () =
 
 Then('the car parts with Immatriculation number as {string} should appear', {timeout: 20 * 5000}, async function (number: string) {
     let EC = protractor.ExpectedConditions;
-    await browser.wait(EC.visibilityOf(element(by.xpath(`//span[text()="${number}"]`))), 10000);
+    await browser.wait(EC.visibilityOf(element(by.xpath(`//span[text()="${number}"]`))), 20000);
     const immatriculationNumber = element(by.xpath(`//span[text()="${number}"]`));
     await chai.expect(immatriculationNumber.isDisplayed()).to.eventually.be.true;
-  });
+});
+
+Then('the car parts with vin number as {string} should appear', {timeout: 20 * 5000}, async function (number: string) {
+    let EC = protractor.ExpectedConditions;
+    await browser.wait(EC.visibilityOf(element(by.xpath(`//span[text()="${number}"]`))), 20000);
+    const vinNumber = element(by.xpath(`//span[text()="${number}"]`));
+    await chai.expect(vinNumber.isDisplayed()).to.eventually.be.true;
+});
 
 Then('the vehical parts result page is displayed', {timeout: 20 * 5000}, async () => {
     let EC = protractor.ExpectedConditions;
@@ -226,4 +252,11 @@ Then('the order details page is displayed', {timeout: 20 * 5000}, async () => {
     await browser.wait(EC.visibilityOf(element(by.xpath('//div[contains(@class," order-confirm-block")]'))), 10000);
     const orderDetails = element(by.xpath('//div[contains(@class," order-confirm-block")]'));
     await chai.expect(orderDetails.isDisplayed()).to.eventually.be.true;
+});
+
+Then('the vim nnumber field is displayed', async () => {
+    let EC = protractor.ExpectedConditions;
+    await browser.wait(EC.visibilityOf(element(by.xpath('//input[@id="vinNumber"]'))), 10000);
+    const vinField = element(by.xpath('//input[@id="vinNumber"]'));
+    await chai.expect(vinField.isDisplayed()).to.eventually.be.true;
 });
