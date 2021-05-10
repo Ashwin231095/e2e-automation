@@ -127,7 +127,6 @@ When('the user clicks on my orders button in order details page', {timeout: 20 *
 
 When('the user clicks on order details button', {timeout: 20 * 5000}, async () => {
     let EC = protractor.ExpectedConditions;
-    await browser.sleep(100000);
     const detailsButton = $$('[class*="detail-button-text"]').first();
     await detailsButton.click();
 });
