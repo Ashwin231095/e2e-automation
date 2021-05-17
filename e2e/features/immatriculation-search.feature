@@ -8,105 +8,107 @@ Feature: Search Renault brand via Immatriculation to make the order
 
         Given that user navigates to page with url as "https://re7.portaildigital.ram.aws.renault.com/login"
         
-        When the user clicks on the login button
-        When the user invalid R2 username and password as "d015332" and "co7002898"
+        # When the user clicks on the login button
+        # When the user invalid R2 username and password as "d015332" and "co7002898"
         
         When the user clicks on the login button
         When user logins in with credentials id "d015224" and password "co7006"
         Then the application should be logged in
 
-        When the user searches for vehicle with Immatriculation number as "ZZZZZZZZ"
-        Then the Immatriculation error should appear
+        # When the user searches for vehicle with Immatriculation number as "ZZZZZZZZ"
+        # Then the Immatriculation error should appear
 
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
 
-        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
 
-        When the user clicks on cart icon
-        When the user removes products from the cart
-        Then an empty cart is displayed
+        # When the user clicks on cart icon
+        # When the user removes products from the cart
+        # Then an empty cart is displayed
+        
+        When the user accepts the cookies
 
-        When the user clicks on AJOUTER AU PANIER button with multiple quantity of products
+        # When the user clicks on AJOUTER AU PANIER button with multiple quantity of products
 
-        When the user clicks on cart icon
-        When the user removes products from the cart
-        Then an empty cart is displayed
+        # When the user clicks on cart icon
+        # When the user removes products from the cart
+        # Then an empty cart is displayed
 
-        When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user navigates to the home page
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à carburant"
-        Then the vehical parts result page is displayed here
+        # When the user views the result page selecting a brand "Filtre à carburant"
+        # Then the vehical parts result page is displayed here
 
-        When the user clicks on AJOUTER AU PANIER button for "SUPPORT FILTRE GAZOLE"
+        # When the user clicks on AJOUTER AU PANIER button for "SUPPORT FILTRE GAZOLE"
 
-        When the user clicks on AJOUTER AU PANIER button for "PROTECTEUR FILTRE GAZOLE"
-        When the user empties the cart
-        Then an empty cart is displayed
+        # When the user clicks on AJOUTER AU PANIER button for "PROTECTEUR FILTRE GAZOLE"
+        # When the user empties the cart
+        # Then an empty cart is displayed
 
-        When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
-        When the user clicks on the refrence "FILTRE AIR EQP"
-        Then the navigated page is "/partsheetrenaultdetails"
+        # When the user navigates to the home page
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
+        # When the user clicks on the refrence "FILTRE AIR EQP"
+        # Then the navigated page is "/partsheetrenaultdetails"
 
-        When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user navigates to the home page
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
 
-        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
-        Then the cart count should be "1"
+        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        # Then the cart count should be "1"
 
-        When the user clicks on cart icon
-        Then the basket preview is open
+        # When the user clicks on cart icon
+        # Then the basket preview is open
 
-        When the user click on Voir mon panier button
-        Then the navigated page is "/cart"
+        # When the user click on Voir mon panier button
+        # Then the navigated page is "/cart"
 
-        When the user empties the cart
-        Then an empty cart is displayed
+        # When the user empties the cart
+        # Then an empty cart is displayed
 
-        When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user navigates to the home page
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
 
-        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
-        When the user clicks on cart icon
+        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        # When the user clicks on cart icon
 
-        When the user click on Voir mon panier button
-        When the user click on remove button in cart page
-        Then the cart page is empty
+        # When the user click on Voir mon panier button
+        # When the user click on remove button in cart page
+        # Then the cart page is empty
 
-        Then the cart count should be 0
+        # Then the cart count should be 0
 
-        When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user navigates to the home page
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
 
-        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
-        When the user clicks on cart icon
-        When the user clicks on validate my order button basket preview
-        Then the navigated page is "/checkout"
-        When the user empties the cart
-        Then an empty cart is displayed
+        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        # When the user clicks on cart icon
+        # When the user clicks on validate my order button basket preview
+        # Then the navigated page is "/checkout"
+        # When the user empties the cart
+        # Then an empty cart is displayed
 
-        When the user navigates to the home page
+        # When the user navigates to the home page
         When the user searches for vehicle with Immatriculation number as "CC125AN"
         Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
@@ -122,10 +124,10 @@ Feature: Search Renault brand via Immatriculation to make the order
         When the user clicks on my orders button in order details page
         Then the navigated page is "/account/shopping/orders"
         When the user clicks on order details button
-        Then the navigated page is "/account/shopping/orders/order2" 
-        When the user clicks on retour button
-        Then the navigated page is "/account/shopping/orders"
-        When the user clicks on logo
-        Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
-        When the user clicks on logout button
-        Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
+        Then the navigated page is "/account/shopping/orders/order2"
+        # When the user clicks on retour button
+        # Then the navigated page is "/account/shopping/orders"
+        # When the user clicks on logo
+        # Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
+        # When the user clicks on logout button
+        # Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"

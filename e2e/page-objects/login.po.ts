@@ -25,7 +25,7 @@ export class LoginPage{
     const testUser = element(by.xpath('//div[text()="RN TEST FR R2 - d015225 - UserR1 TESTIDP"]//input'));
     await testUser.click();
     await login.click();
-    await browser.sleep(1000);
+    await browser.sleep(2000);
     await browser.switchTo().window(currentGuid);
     await browser.waitForAngularEnabled(true);
     // await browser.wait(EC.visibilityOf(element(by.xpath('//span[text()="OK"]//parent::button'))), 10000);
