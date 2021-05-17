@@ -17,8 +17,20 @@ When('the user searches for vehicle with Immatriculation number as {string}', {t
     await researchButton.click();
 });
 
+When('the user accepts the cookies', {timeout: 20 * 5000} , async () => {
+    const acceptCookie = element(by.xpath('//div[@ng-click="vm.acceptCookiePolicy()"]'));
+    await acceptCookie.click();
+    // let EC = protractor.ExpectedConditions;
+    // await browser.wait(EC.visibilityOf(element(by.xpath('//span[text()="Retour"]'))), 10000);
+    // const retour = element(by.xpath('//span[text()="Retour"]'));
+    // await retour.click();
+    
+});
+
 When('the user searches for vehicle with vin number as {string}', {timeout: 20 * 5000} , async (number: string) => {
     let EC = protractor.ExpectedConditions;
+    const acceptCookie = element(by.xpath('//div[@ng-click="vm.acceptCookiePolicy()"]'));
+    await acceptCookie.click();
     const vinField = element(by.css('[id="vinNumber"]'));
     await vinField.clear();
     await vinField.sendKeys(number);
@@ -36,8 +48,7 @@ When('the user views the result page selecting a brand {string}', {timeout: 20 *
 });
 
 When('the user clicks on AJOUTER AU PANIER button for {string}', {timeout: 20 * 5000}, async (product: string) => {
-    await browser.refresh();
-    await browser.sleep(1000);
+    // await browser.refresh();
     let EC = protractor.ExpectedConditions;
     await browser.wait(EC.visibilityOf(element(by.xpath(`//a[text()="${product}"]//ancestor::div[@class="parts-item-box"]//button[@class="contact-info-button"]`))));
     const ajouterAuPanier = element(by.xpath(`//a[text()="${product}"]//ancestor::div[@class="parts-item-box"]//button[@class="contact-info-button"]`));
@@ -47,11 +58,19 @@ When('the user clicks on AJOUTER AU PANIER button for {string}', {timeout: 20 * 
 When('the user clicks on AJOUTER AU PANIER button with multiple quantity of products', {timeout: 20 * 5000}, async () => {
     await browser.refresh();
     await browser.sleep(2000);
-    const acceptCookie = element(by.xpath('//div[@ng-click="vm.acceptCookiePolicy()"]'));
-    await acceptCookie.click();
     const increaseButton = element(by.xpath(`//button[@ng-click="updateQuantity('+');"]//parent::span`));
     await increaseButton.click();
     const ajouterAuPanier = element(by.css('[class="contact-info-button"]'));
+    await ajouterAuPanier.click();
+});
+
+When('the user clicks on AJOUTER AU PANIER button with multiple quantity of products for {string}', {timeout: 20 * 5000}, async (refrence: string) => {
+    await browser.refresh();
+    await browser.sleep(2000);
+    const increaseButton = 
+    element(by.xpath(`//a[text()="${refrence}"]//ancestor::div[@id="container"]//button[@ng-click="updateQuantity('+');"]`));
+    await increaseButton.click();
+    const ajouterAuPanier = element(by.xpath(`//a[text()="${refrence}"]//ancestor::div[@id="container"]//button[@class="contact-info-button"]`));
     await ajouterAuPanier.click();
 });
 
@@ -78,7 +97,12 @@ When('the user empties the cart', {timeout: 20 * 5000}, async () => {
 });
 
 When('the user navigates to the home page', {timeout: 20 * 5000}, async () => {
-    await browser.navigate().to(browser.baseUrl);
+    // await browser.navigate().to(browser.baseUrl);
+    await browser.refresh();
+    let EC = protractor.ExpectedConditions;
+    await browser.wait(EC.visibilityOf(element(by.xpath('//a[@ui-sref="home"]'))), 10000);
+    const logo = element(by.xpath('//a[@ui-sref="home"]'));
+    await logo.click();
 });
 
 When('the user clicks on the refrence {string}', {timeout: 20 * 5000}, async (refrence: string) => {
@@ -241,7 +265,7 @@ Then('the cart count should be 0' , {timeout: 20 * 5000}, async () => {
 
 Then('the order confirmation page is displayed' , {timeout: 20 * 5000}, async () => {
     let EC = protractor.ExpectedConditions;
-    await browser.wait(EC.visibilityOf(element(by.xpath('//div[@ng-if="vm.isDetailedConfirmation"]'))), 10000);
+    await browser.wait(EC.visibilityOf(element(by.xpath('//div[@ng-if="vm.isDetailedConfirmation"]'))), 15000);
     const orderDetails = element(by.xpath('//div[@ng-if="vm.isDetailedConfirmation"]'));
     await chai.expect(orderDetails.isDisplayed()).to.eventually.be.true;
 });
@@ -253,7 +277,7 @@ Then('the order details page is displayed', {timeout: 20 * 5000}, async () => {
     await chai.expect(orderDetails.isDisplayed()).to.eventually.be.true;
 });
 
-Then('the vim nnumber field is displayed', async () => {
+Then('the vim number field is displayed', async () => {
     let EC = protractor.ExpectedConditions;
     await browser.wait(EC.visibilityOf(element(by.xpath('//input[@id="vinNumber"]'))), 10000);
     const vinField = element(by.xpath('//input[@id="vinNumber"]'));

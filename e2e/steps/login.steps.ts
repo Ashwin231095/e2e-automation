@@ -19,10 +19,6 @@ Given('that user navigates to page with url as {string}', async (url: string) =>
     await browser.navigate().to(url);
 });
 
-Given('that user has logged into the application', async () => {
-    console.log('the last scenario ul ', await BrowserUtils.getCurrentURL());
-});
-
 Given('that user is in page with url as {string}', async (url: string) => {
     await chai.expect(BrowserUtils.getCurrentURL()).to.eventually.contain(url);
 });
@@ -36,12 +32,6 @@ When('the user clicks on the login button', async () => {
     await browser.wait(EC.visibilityOf(element(by.xpath('//button[not(contains(@style,"display: none;"))]'))), 10000);
     const loginButton: ElementFinder = element(by.xpath('//button[not(contains(@style,"display: none;"))]'));
     await loginButton.click();
-});
-
-When('the user clicks on the login button 2', {timeout: 20 * 5000}, async () => {
-    const loginButton: ElementFinder = element(by.xpath('//button[not(contains(@style,"display: none;"))]'));
-    await loginButton.click();
-    await browser.sleep(100000)
 });
 
 When('user logins in with credentials id {string} and password {string}', {timeout: 20 * 5000}, async (username, password) => {

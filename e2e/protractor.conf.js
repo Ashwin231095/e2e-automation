@@ -14,7 +14,7 @@ exports.config = {
   allScriptsTimeout: 45000,
   getPageTimeout: 30000,
   specs: [
-    'features/*.feature'
+    'features/immatriculation-search.feature'
   ],
   capabilities: {
     browserName: 'chrome',
