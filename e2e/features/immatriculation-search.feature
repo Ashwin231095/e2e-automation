@@ -5,12 +5,10 @@ Feature: Search Renault brand via Immatriculation to make the order
         Given the user has the application url
         When the user navigates to the application
         Then there is the login module displayed
-
-        Given that user navigates to page with url as "https://re7.portaildigital.ram.aws.renault.com/login"
         
         # When the user clicks on the login button
         # When the user invalid R2 username and password as "d015332" and "co7002898"
-        
+
         When the user clicks on the login button
         When user logins in with credentials id "d015224" and password "co7006"
         Then the application should be logged in
@@ -18,17 +16,17 @@ Feature: Search Renault brand via Immatriculation to make the order
         # When the user searches for vehicle with Immatriculation number as "ZZZZZZZZ"
         # Then the Immatriculation error should appear
 
-        # When the user searches for vehicle with Immatriculation number as "CC125AN"
-        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        When the user searches for vehicle with Immatriculation number as "CC125AN"
+        Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        # When the user views the result page selecting a brand "Filtre à air"
-        # Then the vehical parts result page is displayed
+        When the user views the result page selecting a brand "Filtre à air"
+        Then the vehical parts result page is displayed
 
-        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
 
-        # When the user clicks on cart icon
-        # When the user removes products from the cart
-        # Then an empty cart is displayed
+        When the user clicks on cart icon
+        When the user removes products from the cart
+        Then an empty cart is displayed
         
         When the user accepts the cookies
 
@@ -58,6 +56,9 @@ Feature: Search Renault brand via Immatriculation to make the order
         # Then the vehical parts result page is displayed
         # When the user clicks on the refrence "FILTRE AIR EQP"
         # Then the navigated page is "/partsheetrenaultdetails"
+        # When the user empties the cart
+        # Then an empty cart is displayed
+
 
         # When the user navigates to the home page
         # When the user searches for vehicle with Immatriculation number as "CC125AN"
@@ -109,22 +110,22 @@ Feature: Search Renault brand via Immatriculation to make the order
         # Then an empty cart is displayed
 
         # When the user navigates to the home page
-        When the user searches for vehicle with Immatriculation number as "CC125AN"
-        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        # When the user searches for vehicle with Immatriculation number as "CC125AN"
+        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        When the user views the result page selecting a brand "Filtre à air"
-        Then the vehical parts result page is displayed
+        # When the user views the result page selecting a brand "Filtre à air"
+        # Then the vehical parts result page is displayed
 
-        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
-        When the user clicks on cart icon
-        When the user clicks on validate my order button basket preview
-        When the user clicks on Valider ma commande button
-        Then the order confirmation page is displayed
-        Then the order details page is displayed
-        When the user clicks on my orders button in order details page
-        Then the navigated page is "/account/shopping/orders"
-        When the user clicks on order details button
-        Then the navigated page is "/account/shopping/orders/order2"
+        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        # When the user clicks on cart icon
+        # When the user clicks on validate my order button basket preview
+        # When the user clicks on Valider ma commande button
+        # Then the order confirmation page is displayed
+        # Then the order details page is displayed
+        # When the user clicks on my orders button in order details page
+        # Then the navigated page is "/account/shopping/orders"
+        # When the user clicks on order details button
+        # Then the navigated page is "/account/shopping/orders/order2"
         # When the user clicks on retour button
         # Then the navigated page is "/account/shopping/orders"
         # When the user clicks on logo
