@@ -1,13 +1,12 @@
 import * as chai from 'chai';
 import * as chaiaspromised from 'chai-as-promised';
-import { WebdriverHelper } from 'e2e/utils/webdriver.utils';
+import { WebdriverHelper } from '../utils/webdriver.utils';
 
 chai.use(chaiaspromised);
 
 import { browser, by, element, ElementArrayFinder, ElementFinder, protractor } from "protractor";
 
 export class CartPage extends WebdriverHelper {
-    EC = protractor.ExpectedConditions;
     cartIcon: ElementFinder;
     deleteButton: ElementFinder;
     deleteButtons: ElementArrayFinder;
@@ -79,26 +78,25 @@ export class CartPage extends WebdriverHelper {
     }
 
     async isBasketPreviewDisplay(): Promise<boolean> {
-        await browser.wait(this.EC.visibilityOf(this.basketPreview), 10000);
+        await WebdriverHelper.waitForVisibility(this.basketPreview)
         return await this.basketPreview.isDisplayed();
     }
 
     async emptyCartPageDisplay() {
-        await browser.sleep(1000);
-        let EC = protractor.ExpectedConditions;
-        await browser.wait(EC.visibilityOf(this.resultEmptyPage), 10000);
+        await WebdriverHelper.sleep(1000);
+        await WebdriverHelper.waitForVisibility(this.resultEmptyPage);
         return await this.resultEmptyPage.isDisplayed();
     }
 
     async theCartCountIsZero(): Promise<boolean> {
-        await browser.wait(this.EC.visibilityOf(this.getZeroCount), 10000);
+        await WebdriverHelper.waitForVisibility(this.getZeroCount);
         return await this.getZeroCount.isDisplayed();
     }
 
     async clickOnRemoveButton() {
-        await browser.wait(this.EC.visibilityOf(this.removeButton), 10000);
-        await this.removeButton.click();
-        await browser.wait(this.EC.visibilityOf(this.confirmButton), 10000);
-        await this.confirmButton.click();
+        await WebdriverHelper.waitForVisibility(this.removeButton)
+        await WebdriverHelper.click(this.removeButton);
+        await WebdriverHelper.waitForVisibility(this.confirmButton);
+        await WebdriverHelper.click(this.confirmButton);
     }
 }

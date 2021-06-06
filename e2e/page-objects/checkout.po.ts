@@ -1,15 +1,16 @@
-import { browser, by, element, ElementFinder, protractor } from "protractor";
+import { WebdriverHelper } from "../utils/webdriver.utils";
+import { browser, by, element, ElementFinder } from "protractor";
 
-export class CheckoutPage {
-    EC = protractor.ExpectedConditions;
+export class CheckoutPage extends WebdriverHelper {
     validerMaCommandeButton: ElementFinder;
     constructor() {
+        super();
         this.validerMaCommandeButton = element(by.xpath('//span[text()="Valider ma commande"]'));
     }
 
     async clickValiderMaCommande() {
-        await browser.sleep(1000);
-        await browser.wait(this.EC.visibilityOf(this.validerMaCommandeButton), 10000);
-        await this.validerMaCommandeButton.click();
+        await WebdriverHelper.sleep(1000)
+        await WebdriverHelper.waitForVisibility(this.validerMaCommandeButton);
+        await WebdriverHelper.click(this.validerMaCommandeButton);
     }
 }
