@@ -7,14 +7,14 @@ Feature: Search Renault brand via Immatriculation to make the order
         Then there is the login module displayed
         
         # When the user clicks on the login button
-        # When the user invalid R2 username and password as "d015332" and "co7002898"
+        # When the user invalid R2 username and password as "" and ""
 
         When the user clicks on the login button
-        When user logins in with credentials id "d015224" and password "co7006"
+        When user logins in with credentials id "" and password ""
         Then the application should be logged in
 
-        # When the user searches for vehicle with Immatriculation number as "ZZZZZZZZ"
-        # Then the Immatriculation error should appear
+        When the user searches for vehicle with Immatriculation number as "ZZZZZZZZ"
+        Then the Immatriculation error should appear
 
         When the user searches for vehicle with Immatriculation number as "CC125AN"
         Then the car parts with Immatriculation number as "CC-125-AN" should appear
@@ -24,30 +24,30 @@ Feature: Search Renault brand via Immatriculation to make the order
 
         When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
 
-        When the user clicks on cart icon
-        When the user removes products from the cart
-        Then an empty cart is displayed
-        
-        When the user accepts the cookies
-
-        # When the user clicks on AJOUTER AU PANIER button with multiple quantity of products
-
         # When the user clicks on cart icon
         # When the user removes products from the cart
         # Then an empty cart is displayed
+        
+        When the user accepts the cookies
 
-        # When the user navigates to the home page
-        # When the user searches for vehicle with Immatriculation number as "CC125AN"
-        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        When the user clicks on AJOUTER AU PANIER button with multiple quantity of products
 
-        # When the user views the result page selecting a brand "Filtre à carburant"
-        # Then the vehical parts result page is displayed here
-
-        # When the user clicks on AJOUTER AU PANIER button for "SUPPORT FILTRE GAZOLE"
-
-        # When the user clicks on AJOUTER AU PANIER button for "PROTECTEUR FILTRE GAZOLE"
+        # When the user clicks on cart icon
         # When the user empties the cart
         # Then an empty cart is displayed
+
+        When the user navigates to the home page
+        When the user searches for vehicle with Immatriculation number as "CC125AN"
+        Then the car parts with Immatriculation number as "CC-125-AN" should appear
+
+        When the user views the result page selecting a brand "Filtre à carburant"
+        Then the vehical parts result page is displayed here
+
+        When the user clicks on AJOUTER AU PANIER button for "SUPPORT FILTRE GAZOLE"
+
+        When the user clicks on AJOUTER AU PANIER button for "PROTECTEUR FILTRE GAZOLE"
+        When the user empties the cart
+        Then an empty cart is displayed
 
         # When the user navigates to the home page
         # When the user searches for vehicle with Immatriculation number as "CC125AN"
