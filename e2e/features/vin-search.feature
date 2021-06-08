@@ -9,10 +9,10 @@ Feature: Search Renault brand via VIN to make the order
         Given that user navigates to page with url as "https://re7.portaildigital.ram.aws.renault.com/login"
         
         When the user clicks on the login button
-        When the user invalid R2 username and password as "d015332" and "co7002898"
+        When the user invalid R2 username and password as "" and ""
         
         When the user clicks on the login button
-        When user logins in with credentials id "d015224" and password "co7006"
+        When user logins in with credentials id "" and password ""
         Then the application should be logged in
 
         When the user clicks on vin tab in home page
