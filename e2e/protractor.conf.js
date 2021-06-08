@@ -32,7 +32,7 @@ exports.config = {
     },
   },
   directConnect: true,
-  baseUrl: 'https://re7.portaildigital.ram.aws.renault.com',
+  baseUrl: 'https://dev.portaildigital.ram.aws.renault.com/',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
