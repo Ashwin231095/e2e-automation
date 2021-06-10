@@ -58,5 +58,6 @@ export class LoginPage{
     await chai.expect(this.errorMessage.isPresent()).to.eventually.be.true;
     await browser.driver.close();
     await browser.switchTo().window(currentGuid);
+    await browser.sleep(2000);
     }
 }
