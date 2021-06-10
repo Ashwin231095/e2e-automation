@@ -14,7 +14,7 @@ exports.config = {
   allScriptsTimeout: 45000,
   getPageTimeout: 30000,
   specs: [
-    'features/immatriculation-search.feature'
+    'features/vin-search.feature'
   ],
   capabilities: {
     browserName: 'chrome',

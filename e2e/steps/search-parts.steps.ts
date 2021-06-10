@@ -56,7 +56,7 @@ When('the user navigates to the home page', {timeout: 20 * 5000}, async () => {
 });
 
 When('the user clicks on the refrence {string}', {timeout: 20 * 5000}, async (refrence: string) => {
-    await page.partsInfo.refrenceName(refrence);
+    await page.partsInfo.refrenceName(refrence).click();
 });
 
 When('the user click on Voir mon panier button', {timeout: 20 * 5000}, async () => {
@@ -87,7 +87,7 @@ When('the user clicks on retour button', {timeout: 20 * 5000}, async () => {
     await page.common.clickRetour();
 });
 
-When('the user clicks on logo', async () => {
+When('the user clicks on logo', {timeout: 20 * 5000}, async () => {
     await page.common.navigateHome();
 });
 
