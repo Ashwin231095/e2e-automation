@@ -14,7 +14,7 @@ exports.config = {
   allScriptsTimeout: 45000,
   getPageTimeout: 30000,
   specs: [
-    'features/vin-search.feature'
+    'features/**/validate-order.feature'
   ],
   capabilities: {
     browserName: 'chrome',
@@ -32,7 +32,7 @@ exports.config = {
     },
   },
   directConnect: true,
-  baseUrl: 'https://dev.portaildigital.ram.aws.renault.com/',
+  baseUrl: 'https://pre.portaildigital.ram.aws.renault.com/login',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
