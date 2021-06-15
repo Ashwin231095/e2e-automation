@@ -40,6 +40,12 @@ When('user logins in with credentials id {string} and password {string}', {timeo
     await browser.refresh();
 });
 
+When('user logins into pre-prod with credentials id {string} and password {string}', {timeout: 20 * 5000}, async (username, password) => {
+    await page.loginPage.loginToPreProd(username, password);
+    await browser.sleep(1000);
+    await browser.refresh();
+});
+
 When('the user invalid R2 username and password as {string} and {string}', {timeout: 20 * 5000}, async (username, password) => {
     await page.loginPage.loginWithWrongCredentials(username, password);
 });

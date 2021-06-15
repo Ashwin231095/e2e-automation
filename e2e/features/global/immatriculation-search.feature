@@ -109,26 +109,26 @@ Feature: Search Renault brand via Immatriculation to make the order
         # When the user empties the cart
         # Then an empty cart is displayed
 
-        # When the user navigates to the home page
-        # When the user searches for vehicle with Immatriculation number as "CC125AN"
-        # Then the car parts with Immatriculation number as "CC-125-AN" should appear
+        When the user navigates to the home page
+        When the user searches for vehicle with Immatriculation number as "CC125AN"
+        Then the car parts with Immatriculation number as "CC-125-AN" should appear
 
-        # When the user views the result page selecting a brand "Filtre à air"
-        # Then the vehical parts result page is displayed
+        When the user views the result page selecting a brand "Filtre à air"
+        Then the vehical parts result page is displayed
 
-        # When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
-        # When the user clicks on cart icon
-        # When the user clicks on validate my order button basket preview
-        # When the user clicks on Valider ma commande button
-        # Then the order confirmation page is displayed
-        # Then the order details page is displayed
-        # When the user clicks on my orders button in order details page
-        # Then the navigated page is "/account/shopping/orders"
-        # When the user clicks on order details button
-        # Then the navigated page is "/account/shopping/orders/order2"
-        # When the user clicks on retour button
-        # Then the navigated page is "/account/shopping/orders"
-        # When the user clicks on logo
-        # Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
-        # When the user clicks on logout button
-        # Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
+        When the user clicks on AJOUTER AU PANIER button for "FILTRE AIR EQP"
+        When the user clicks on cart icon
+        When the user clicks on validate my order button basket preview
+        When the user clicks on Valider ma commande button
+        Then the order confirmation page is displayed
+        Then the order details page is displayed
+        When the user clicks on my orders button in order details page
+        Then the navigated page is "/account/shopping/orders"
+        When the user clicks on order details button
+        Then the navigated page is "/account/shopping/orders/order2"
+        When the user clicks on retour button
+        Then the navigated page is "/account/shopping/orders"
+        When the user clicks on logo
+        Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
+        When the user clicks on logout button
+        Then the navigated page is "https://re7.portaildigital.ram.aws.renault.com/"
