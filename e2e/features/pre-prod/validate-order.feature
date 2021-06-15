@@ -6,7 +6,7 @@ Feature: Search Renault brand via Immatriculation to validate the order
         Then there is the login module displayed
 
         When the user clicks on the login button
-        When user logins into pre-prod with credentials id "G003417" and password "pu5da5"
+        When user logins into pre-prod with credentials id "" and password ""
         Then the application should be logged in
 
         When the user navigates to the home page
