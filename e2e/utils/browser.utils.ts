@@ -13,4 +13,8 @@ export class BrowserUtils {
         const acceptCookie = element(by.xpath('//div[@ng-click="vm.acceptCookiePolicy()"]'));
         await acceptCookie.click();
     }
+
+    static quitBrowser = async () => {
+        return await browser.quit()
+    }
 }

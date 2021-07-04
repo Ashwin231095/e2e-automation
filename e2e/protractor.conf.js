@@ -14,11 +14,11 @@ exports.config = {
   allScriptsTimeout: 45000,
   getPageTimeout: 30000,
   specs: [
-    'features/**/validate-order.feature'
+    'features/pre-prod/*.feature'
   ],
   capabilities: {
     browserName: 'chrome',
-    shardTestFiles: false,
+    shardTestFiles: true,
     maxInstances: 3,
     chromeOptions: {
       args: [
@@ -44,25 +44,26 @@ exports.config = {
     format: [
       'json:e2e/test-reports/json/cucumber-test-results.json'
     ],
-    tags: ["~@fail"]
+    // @ts-ignore
+    // tags: false
   },
-  plugins: [{
-    package: 'protractor-multiple-cucumber-html-reporter-plugin',
-    options: {
-      automaticallyGenerateReport: true,
-      removeExistingJsonReportFile: true,
-      reportPath: 'e2e/test-reports/html',
-      reportName: 'Re7 e2e results',
-      customData: {
-        title: 'Run info',
-        data: [
-            {label: 'Project', value: 'RParts Automation'},
-            {label: 'Release', value: '1.0.0'},
-            {label: 'Cycle', value: 'XXXXXXXXXXX'},
-        ]
-    }
-    }
-  }],
+  // plugins: [{
+  //   package: 'protractor-multiple-cucumber-html-reporter-plugin',
+  //   options: {
+  //     automaticallyGenerateReport: true,
+  //     removeExistingJsonReportFile: true,
+  //     reportPath: 'e2e/test-reports/html',
+  //     reportName: 'Re7 e2e results',
+  //     customData: {
+  //       title: 'Run info',
+  //       data: [
+  //           {label: 'Project', value: 'RParts Automation'},
+  //           {label: 'Release', value: '1.0.0'},
+  //           {label: 'Cycle', value: 'XXXXXXXXXXX'},
+  //       ]
+  //   }
+  //   }
+  // }],
   onPrepare() {
     // Register to compile typescript files when protractor starts running
     require('ts-node').register({

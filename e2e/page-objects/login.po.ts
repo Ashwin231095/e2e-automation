@@ -33,6 +33,8 @@ export class LoginPage{
     const managerGuid = allWindowGuid.find(guid => guid !== currentGuid);
     await browser.switchTo().window(managerGuid);
     await browser.waitForAngularEnabled(false);
+    await browser.refresh();
+    await browser.sleep(1000);
     await browser.wait(this.EC.visibilityOf(this.usernameField), 10000);
     await this.usernameField.sendKeys(username);
     await browser.sleep(1000);
