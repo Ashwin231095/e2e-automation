@@ -4,6 +4,8 @@ import { When, Then } from 'cucumber';
 import { BrowserUtils } from '../utils/browser.utils';
 import { protractor, element, by, browser, ElementFinder, $$ } from 'protractor';
 import { PageObjects } from '../page-objects/pages';
+import { searchModel } from 'e2e/test-data/types';
+import { WebdriverHelper } from '../utils/webdriver.utils';
 
 chai.use(chaiaspromised);
 
@@ -14,9 +16,17 @@ When('the user searches for vehicle with Immatriculation number as {string}', {t
     await page.homePage.searchImmatriculation(number)
 });
 
+When('the user clicks on model tab', async () => {
+    await page.homePage.clickModelTab();
+});
+
 When('the user accepts the cookies', {timeout: 20 * 5000} , async () => {
     await BrowserUtils.clickCookieButton();
     
+});
+
+When('the user searches for vehicle using the brands', {timeout: 20 * 5000} , async () => {
+    await page.homePage.searchModel();
 });
 
 When('the user searches for vehicle with vin number as {string}', {timeout: 20 * 5000} , async (number: string) => {
@@ -100,7 +110,15 @@ When('the user clicks on vin tab in home page', async () => {
     await page.homePage.clickVinTab();
 });
 
-Then('the application should be logged in', async () => {
+When('the user clicks on thumbnail image', {timeout: 20 * 5000}, async () => {
+    await page.homePage.clickThumbNailImage();
+});
+
+When('the user quits the browser', async () => {
+    await BrowserUtils.quitBrowser();
+});
+
+Then('the application should be logged in', {timeout: 20 * 5000}, async () => {
     const isImmatFieldDisplayed = await page.homePage.isImmatFieldDisplayed()
     chai.expect(isImmatFieldDisplayed).to.be.true;
 });
@@ -116,6 +134,11 @@ Then('the car parts with Immatriculation number as {string} should appear', {tim
 });
 
 Then('the car parts with vin number as {string} should appear', {timeout: 20 * 5000}, async function (number: string) {
+    const isCarPartsDisplay = await page.vehiclePartsPage.carPartsDisplay(number);
+    chai.expect(isCarPartsDisplay).to.be.true;
+});
+
+Then('the car parts with model as {string} should appear', {timeout: 20 * 5000}, async function (number: string) {
     const isCarPartsDisplay = await page.vehiclePartsPage.carPartsDisplay(number);
     chai.expect(isCarPartsDisplay).to.be.true;
 });
