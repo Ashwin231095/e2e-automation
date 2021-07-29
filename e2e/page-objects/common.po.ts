@@ -30,6 +30,7 @@ export class Common {
         await this.profileDropdown.click();
         await browser.wait(this.EC.visibilityOf(this.logoutButton), 10000);
         await this.logoutButton.click();
+        await browser.sleep(2000);
     }
 
 }

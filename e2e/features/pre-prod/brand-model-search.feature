@@ -12,7 +12,7 @@ Feature: Search Renault brand via Model Number to validate the order
 
         When the user accepts the cookies
 
-        # When the user clicks on model tab
+        When the user clicks on model tab
         # When the user searches for vehicle using the brands
         # Then the car parts with model as "RENAULT DUSTER 1" should appear
         
