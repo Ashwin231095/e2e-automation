@@ -37,6 +37,10 @@ When('the user views the result page selecting a brand {string}', {timeout: 20 *
     await page.vehiclePartsPage.confirmPartSelection(brandName);
 });
 
+When('the user views the result page selecting a brand {string} in grid page', {timeout: 20 * 5000}, async (brandName: string) => {
+    await page.vehiclePartsPage.confirmPartSelectionInGrid(brandName);
+});
+
 When('the user clicks on AJOUTER AU PANIER button for {string}', {timeout: 20 * 5000}, async (product: string) => {
     await page.partsInfo.addToCart(product);
 });

@@ -16,7 +16,7 @@ Given the user has the application url
         # When the user searches for vehicle with vin number as "VF1KG1GB634092628"
         # Then the car parts with vin number as "VF1KG1GB634092628" should appear
 
-        # When the user accepts the cookies
+        When the user accepts the cookies
 
         # When the user views the result page selecting a brand "Filtre à air"
         # Then the vehical parts result page is displayed
