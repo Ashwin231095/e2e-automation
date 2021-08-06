@@ -10,12 +10,12 @@ Feature: Search Renault brand via Immatriculation to validate the order
         When user logins into pre-prod with credentials id "G003417" and password "pu5da5"
         Then the application should be logged in
 
-        When the user searches for vehicle with Immatriculation number as "AC123AC"
-        Then the car parts with Immatriculation number as "AC-123-AC" should appear
+        # When the user searches for vehicle with Immatriculation number as "AC123AC"
+        # Then the car parts with Immatriculation number as "AC-123-AC" should appear
 
         When the user accepts the cookies
 
-        When the user views the result page selecting a brand "Filtre à huile" in grid page
+        # When the user views the result page selecting a brand "Filtre à huile" in grid page
         # Then the vehical parts result page is displayed
 
         # When the user clicks on AJOUTER AU PANIER button for "MOTRIO PREMIUM 5W30 C2 5L / 1 bidon(s) de 5 litre(s)"
