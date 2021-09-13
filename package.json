@@ -22,7 +22,10 @@
   "dependencies": {
     "@types/jasmine": "3.6.9",
     "@types/jasminewd2": "2.0.8",
-    "tslib": "^2.3.0"
+    "fs": "0.0.1-security",
+    "jsonfile": "^6.1.0",
+    "tslib": "^2.3.0",
+    "xlsx": "^0.17.1"
   },
   "devDependencies": {
     "@angular/compiler": "8.2.14",
